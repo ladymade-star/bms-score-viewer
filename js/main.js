@@ -1434,11 +1434,11 @@ if (!self.__WB_pmw) {
       },
     })
     // - keys
-    $(`#keys_${getUrlParam().hasOwnProperty("keys") ? getUrlParam().keys : 7}`)[0].checked = true
+    $(`#keys_${getUrlParam().hasOwnProperty("k") ? getUrlParam().k : 7}`)[0].checked = true
     $("#keys_button")
       .find("input")
       .on("change", function (event) {
-        urlParam.keys = this.value
+        urlParam.k = this.value
         setUrlParam()
         location.reload()
       })
