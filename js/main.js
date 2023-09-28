@@ -1713,7 +1713,7 @@ const openBMS = (bmsSource) => {
     genre: headers.genre,
     keys: parseInt(tempParam.keys) || 7,
     lnmap: {},
-    notes: objects.length,
+    notes: objects.filter(x => x.channel.match(/[12][1-9]/) && x.value !== lnobj).length + objects.filter(x => lntype === "1" && x.channel.match(/[56][1-9]/)).length / 2,
     score: [...Array(objects.slice(-1)[0].measure + 1).keys()].map(() => {
       return { length: 72 }
     }),
